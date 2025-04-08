@@ -4,6 +4,7 @@ package ir.kasebvatan.mehranstringpicker;
 import android.annotation.SuppressLint;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -78,13 +79,9 @@ public class PickerAdapter extends RecyclerView.Adapter<PickerAdapter.VH> {
                             data.image
                     )
             );
+            holder.binding.img.setVisibility(View.VISIBLE);
         } catch (Exception e) {
-            holder.binding.img.setImageDrawable(
-                    ContextCompat.getDrawable(
-                            holder.itemView.getContext(),
-                            R.drawable.ic_circle
-                    )
-            );
+            holder.binding.img.setVisibility(View.INVISIBLE);
             Log.d("MehranStringPicker: ", e.toString());
         }
 
